@@ -8,6 +8,11 @@
 </head>
 <body>
     <div id="page">
+        <div id="buttons">
+            <button id="size">Canvas Size</button>
+            <button id="reset">Reset</button>
+        </div>
+        
         <div id="canvas">
 
         </div>
@@ -33,6 +38,24 @@
             });
         };
 
+
+        function getCanvasSize() {
+            let gotAnswer = false;
+            while (gotAnswer === false) {
+                let size = parseInt(prompt("What size do you want the canvas to be?"))
+                
+                if (isNaN(size)) {
+                    alert("Enter a valid number")
+                } else if ((size > 100) || (size < 1)) {
+                    alert("Enter a valid number between 0 and 101 not included")
+                } else {
+                    gotAnswer = true;
+                    return size
+                }
+            }
+        }
+
+        console.log(getCanvasSize());
     </script>
 </body>
 </html>
