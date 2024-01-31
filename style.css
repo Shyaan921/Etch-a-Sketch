@@ -16,22 +16,28 @@ button {
 }
 #canvas {
     display: flex;
-    background-color: lightgreen;
-    width: 800px;
-    height: 800px;
+    height: 700px;
+    width: 700px;
+    background-color: lightpink;
+}
+
+.squares,
+.used {
+    display: flex;
+    flex: auto;
+}   
+
+.used {
+    background-color: rgb(235, 104, 104);
+    border:1px solid rgb(235, 104, 104);
 }
 
 .squares {
-    display: flex;
-    height: 40px;
-    width: 40px;
-    border: 1px solid black
+    border:1px solid rgb(235, 104, 104);
 }
 
-.used {
+.columns {
     display: flex;
-    background-color: lightcoral;
-    height: 40px;
-    width: 40px;
-    border: 1px solid black;
+    flex-direction: column;
+    flex: auto;
 }

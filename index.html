@@ -10,7 +10,6 @@
     <div id="page">
         <div id="buttons">
             <button id="size">Canvas Size</button>
-            <button id="reset">Reset</button>
         </div>
         
         <div id="canvas">
@@ -24,6 +23,7 @@
 
             for (let rows = 0; rows < sideLength; rows++) {
                 let divRows = document.createElement('div')
+                divRows.className = 'columns';
                 for (let columns = 0; columns < sideLength; columns++) {
                     let divColumns = document.createElement('div')
                     divColumns.className = 'squares'
