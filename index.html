@@ -15,19 +15,24 @@
 
     <script>
         let canvas = document.querySelector('#canvas');
-        let number = 1;
 
         for (let rows = 0; rows < 16; rows++) {
             let divRows = document.createElement('div')
             for (let columns = 0; columns < 16; columns++) {
                 let divColumns = document.createElement('div')
                 divColumns.className = 'squares'
-                divColumns.textContent = number;
-                number++;
                 divRows.append(divColumns);
             };
             canvas.append(divRows)
         };
+
+        let squares = document.querySelectorAll('.squares');
+        for (let i = 0; i < squares.length; i++) {
+            squares[i].addEventListener('mouseenter', () => {
+                squares[i].className = 'used'
+            });
+        };
+
     </script>
 </body>
 </html>

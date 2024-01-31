@@ -15,7 +15,14 @@
 }
 
 .squares {
-    border: 2px solid white;
     height: 40px;
     width: 40px;
+    border: 1px solid black
+}
+
+.used {
+    background-color: lightcoral;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
 }
