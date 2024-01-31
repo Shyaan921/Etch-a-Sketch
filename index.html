@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Etch-a-Sketch</title>
+</head>
+<body>
+    <div id="page">
+        <div id="canvas">
+
+        </div>
+    </div>
+
+    <script>
+        let canvas = document.querySelector('#canvas');
+        let number = 1;
+
+        for (let rows = 0; rows < 16; rows++) {
+            let divRows = document.createElement('div')
+            for (let columns = 0; columns < 16; columns++) {
+                let divColumns = document.createElement('div')
+                divColumns.className = 'squares'
+                divColumns.textContent = number;
+                number++;
+                divRows.append(divColumns);
+            };
+            canvas.append(divRows)
+        };
+    </script>
+</body>
+</html>
