@@ -19,25 +19,26 @@
     </div>
 
     <script>
-        let canvas = document.querySelector('#canvas');
+        function makeTable(sideLength) {
+            let canvas = document.querySelector('#canvas');
 
-        for (let rows = 0; rows < 16; rows++) {
-            let divRows = document.createElement('div')
-            for (let columns = 0; columns < 16; columns++) {
-                let divColumns = document.createElement('div')
-                divColumns.className = 'squares'
-                divRows.append(divColumns);
+            for (let rows = 0; rows < sideLength; rows++) {
+                let divRows = document.createElement('div')
+                for (let columns = 0; columns < sideLength; columns++) {
+                    let divColumns = document.createElement('div')
+                    divColumns.className = 'squares'
+                    divRows.append(divColumns);
+                };
+                canvas.append(divRows)
             };
-            canvas.append(divRows)
-        };
 
-        let squares = document.querySelectorAll('.squares');
-        for (let i = 0; i < squares.length; i++) {
-            squares[i].addEventListener('mouseenter', () => {
-                squares[i].className = 'used'
-            });
-        };
-
+            let squares = document.querySelectorAll('.squares');
+            for (let i = 0; i < squares.length; i++) {
+                squares[i].addEventListener('mouseenter', () => {
+                    squares[i].className = 'used'
+                });
+            };
+        }
 
         function getCanvasSize() {
             let gotAnswer = false;
@@ -55,7 +56,21 @@
             }
         }
 
-        console.log(getCanvasSize());
+        function deleteTable() {
+            let canvas = document.querySelector('#canvas');
+            while (canvas.hasChildNodes()) {
+                canvas.removeChild(canvas.firstChild);
+            }
+        }
+
+
+        document.querySelector('#size').addEventListener('click', () => {
+            deleteTable();
+            makeTable(getCanvasSize());
+        }); 
+
+        makeTable(16);
+        
     </script>
 </body>
 </html>

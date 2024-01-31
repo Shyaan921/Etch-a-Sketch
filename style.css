@@ -17,15 +17,19 @@ button {
 #canvas {
     display: flex;
     background-color: lightgreen;
+    width: 800px;
+    height: 800px;
 }
 
 .squares {
+    display: flex;
     height: 40px;
     width: 40px;
     border: 1px solid black
 }
 
 .used {
+    display: flex;
     background-color: lightcoral;
     height: 40px;
     width: 40px;
